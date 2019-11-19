@@ -29,7 +29,7 @@ body {
 
 .caja {
     /* border: 1px solid red; */
-    margin-top: 50px;
+    margin-top: 25px;
     width: 450px;
     height: 400px;
 }
@@ -57,5 +57,22 @@ body {
 }
 
 #secD {
-    display: none;
+    /* display: none; */
+    margin-top: 25px;
+}
+
+.caja,
+#secD {
+    vertical-align: top;
+    display: inline-block;
+}
+
+label,
+select,
+input[type=radio] {
+    margin-bottom: 15px;
+}
+
+.btnM {
+    margin-top: 20px;
 }
