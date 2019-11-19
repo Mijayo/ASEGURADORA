@@ -10,5 +10,20 @@ function myFunction() {
 
 function modelo(c, y) {
     document.getElementById("demo").innerHTML = c + " " + y + " " + precio;
+}
 
+let d = new Date();
+let n = d.getFullYear();
+let c = n - 20;
+console.log(c);
+let cont = 0;
+for (c; c <= n; c++) {
+    let year = document.getElementById("year");
+    // let app = document.write(`<option value="${cont++}">${c}</option>`);
+    // year.appendChild(app);
+    let opt = document.createElement('option');
+    opt.value = cont++;
+    opt.innerHTML = c;
+    year.appendChild(opt);
+    // console.log(c);
 }

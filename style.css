@@ -3,12 +3,35 @@
     padding: 0;
 }
 
-.caja {
+body {
+    color: white !important;
+}
+
+.colorH1 {
+    color: white !important;
+}
+
+.colorHR {
+    border: 1px solid #d2ad73;
+    border-radius: 5px;
+}
+
+.cajaCon {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 6;
+    background-color: #1f2438;
+    height: 600px;
+    border-radius: 15px;
+}
+
+.caja {
+    /* border: 1px solid red; */
+    margin-top: 50px;
+    width: 450px;
+    height: 400px;
 }
 
 #imgLogo {
@@ -20,10 +43,19 @@
     height: 100px;
 }
 
+.colorH1,
+.colorHR {
+    margin-top: 50px;
+}
+
 #imgBG {
     /* border: 1px solid red; */
     position: relative;
     background-image: url("img/_bg.png");
     background-size: cover;
     height: 100vh;
+}
+
+#secD {
+    display: none;
 }

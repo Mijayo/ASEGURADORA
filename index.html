@@ -13,49 +13,43 @@
 
 <body>
 
-    <div class="container caja">
-        <div class="jumbotron">
-            <h1 class="display-3">Aseguradora</h1>
-            <span id="imgLogo"></span>
-            <!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> -->
-            <hr class="my-4">
-            <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
-            <form>
-                <fieldset>
-                    <!-- <legend>Marca</legend> -->
-                    <div class="form-group">
-                        <label for="exampleSelect1">Marca del coche</label>
-                        <select class="form-control" id="car">
+    <div class="container cajaCon">
+        <h1 class="display-3 colorH1">Aseguradora</h1>
+        <span id="imgLogo"></span>
+        <hr class="my-4 colorHR">
+        <div class="caja">
+            <div>
+                <div class="form-group">
+                    <label for="">Marca del coche</label>
+                    <select class="form-control" id="car">
                             <option value="1">Audi</option>
                             <option value="2">Seat</option>
                             <option value="3">Ford</option>
                         </select>
-                        <label for="exampleSelect1">Año</label>
-                        <select class="form-control" id="year">
-                        </select>
+                    <label for="exampleSelect1">Año</label>
+                    <select class="form-control" id="year">
+                    </select>
+                </div>
+                <label for="">Tipo de seguro</label>
+                <div class="form-group">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked="">
+                        <label class="custom-control-label" for="customRadio1">Basico</label>
                     </div>
-                </fieldset>
-                <fieldset>
-                    <label for="">Tipo de seguro</label>
-                    <div class="form-group">
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input radioC" checked="">
-                            <label class="custom-control-label" for="customRadio1">Basico</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input radioC">
-                            <label class="custom-control-label" for="customRadio2">Completo</label>
-                        </div>
-                        <!-- <div class="custom-control custom-radio">
-                            <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio3">Disabled custom radio</label>
-                        </div> -->
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio2">Completo</label>
                     </div>
-                </fieldset>
+                </div>
                 <button type="submit" class="btn btn-primary" onclick="myFunction()">calcular seguro</button>
-            </form>
-        </div>
+            </div>
+            <section id="secD">
+                <div>
+                    <p id="demo"></p>
+                </div>
+            </section>
 
+        </div>
     </div>
     <section>
         <div id="imgBG"></div>
