@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.caja {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 6;
+}
+
+#imgLogo {
+    float: right;
+    margin-top: -100px;
+    background-image: url("img/logo.png");
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+}
+
+#imgBG {
+    /* border: 1px solid red; */
+    position: relative;
+    background-image: url("img/_bg.png");
+    background-size: cover;
+    height: 100vh;
+}
