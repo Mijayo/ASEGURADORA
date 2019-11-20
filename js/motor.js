@@ -80,6 +80,27 @@ function calculos(c, y, d, t, m) {
 
     setTimeout(function() {
 
+        if (c === "Audi") {
+            const modelo = document.getElementById("coche");
+            var foto = document.createElement('img');
+            foto.src = 'img/audi.png';
+            foto.setAttribute("class", "imgCoche");
+            foto.width = 400;
+            modelo.appendChild(foto);
+        } else if (c === "Seat") {
+            const modelo = document.getElementById("coche");
+            var foto = document.createElement('img');
+            foto.src = 'img/seat.png';
+            foto.width = 400;
+            modelo.appendChild(foto);
+        } else {
+            const modelo = document.getElementById("coche");
+            var foto = document.createElement('img');
+            foto.src = 'img/golf.png';
+            foto.width = 400;
+            modelo.appendChild(foto);
+        }
+
         document.getElementById("spinner").style.display = "none";
         document.getElementById("div1").style.display = "block";
 

@@ -87,6 +87,26 @@ body {
     color: #1f2438;
 }
 
+#coche,
+#texto {
+    vertical-align: top;
+    display: inline-block;
+    /* border: 1px solid red; */
+    height: 150px;
+    width: 250px;
+}
+
+#texto {
+    margin-left: 25px;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.imgCoche {
+    margin-top: -20px;
+    margin-left: -50px;
+}
+
 #spinner {
     display: none;
     position: absolute;
