@@ -20,7 +20,7 @@
         <span id="imgLogo"></span>
         <hr class="my-4 colorHR">
         <div class="caja">
-            <div>
+            <form method="POST">
                 <div class="form-group">
                     <label for="">Marca del coche</label>
                     <select class="form-control" id="car">
@@ -43,10 +43,19 @@
                         <label class="custom-control-label" for="customRadio2">Completo</label>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary btnM" onclick="myFunction()">calcular seguro</button>
-            </div>
+                <button type="submit" class="btn btn-primary btnM" id="calcular">calcular seguro</button>
+            </form>
         </div>
         <section id="secD">
+
+            <!-- <div id="div1">
+                <div id="coche"></div>
+                <div id="texto">
+                    <p id="demo"></p>
+                </div>
+            </div> -->
+
+
             <!-- SPINNNER -->
             <div class="lds-default" id="spinner">
                 <div></div>
@@ -63,19 +72,6 @@
                 <div></div>
             </div>
             <!--  -->
-
-            <div id="div1">
-                <div id="coche">
-
-                </div>
-                <div id="texto">
-                    <p id="demo"></p>
-                </div>
-            </div>
-
-            <div id="div2">
-
-            </div>
         </section>
     </div>
     <section>

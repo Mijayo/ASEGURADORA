@@ -31,14 +31,13 @@ function yoQueSe() {
 }
 
 
-function myFunction() {
-
-    yoQueSe();
-    // setInterval(yoQueSe, 1000);
+const calcularSeguro = document.getElementById('calcular').addEventListener('click', function(e) {
+    e.preventDefault();
+    // yoQueSe();
 
     // Marca del coche
-    var e = document.getElementById("car");
-    var strUser = e.options[e.selectedIndex].text;
+    var car = document.getElementById("car");
+    var strUser = car.options[car.selectedIndex].text;
 
     // Año del coche
     var y = document.getElementById("year");
@@ -59,11 +58,9 @@ function myFunction() {
     if (document.getElementById('customRadio1').checked) {
         // Basico 
         var tipo = precio * seguroBasico;
-
     } else if (document.getElementById('customRadio2').checked) {
         // Completo
         var tipo = precio * seguroCompleto;
-
     }
 
     ///// DESCUENTO DEPENDIENDO DEL AÑO /////
@@ -71,45 +68,93 @@ function myFunction() {
     let descuentoYear = (dY.options[dY.selectedIndex].value) * 0.3;
     /////
 
-
     // Llamo a la funcion calculos pasandole parametros  Para pintar en el HTML
     calculos(strUser, str, descuentoYear, tipo, marca);
-}
+});
+
 
 function calculos(c, y, d, t, m) {
 
+
+    // const section = document.getElementById('secD');
+    // var div = document.createElement('div');
+    // div.setAttribute('class', '.div1');
+    // section.appendChild(div);
+
     setTimeout(function() {
 
+        // variables
+        let precioFinal = precio + (((t) + (m)) - (d));
+
+
+
         if (c === "Audi") {
-            const modelo = document.getElementById("coche");
+
+            let secD = document.getElementById("secD");
+            secD.innerHTML = `<div class="div1">
+                            <div class="coche"></div>
+                            <div class="texto">
+                                <p class="demo"></p>
+                            </div>
+                        </div>`;
+
+            const modelo = document.getElementsByClassName("coche")[0];
             var foto = document.createElement('img');
             foto.src = 'img/audi.png';
             foto.setAttribute("class", "imgCoche");
             foto.width = 400;
             modelo.appendChild(foto);
+
+            // pinto texto
+            const txt = document.getElementsByClassName("demo")[0];
+            txt.innerHTML = c + " " + y + " " + precioFinal + "€";
+
+
         } else if (c === "Seat") {
-            const modelo = document.getElementById("coche");
+
+            let secD = document.getElementById("secD");
+            secD.innerHTML = `<div class="div1">
+                            <div class="coche"></div>
+                            <div class="texto">
+                                <p class="demo"></p>
+                            </div>
+                        </div>`;
+
+            const modelo = document.getElementsByClassName("coche")[0];
             var foto = document.createElement('img');
             foto.src = 'img/seat.png';
+            foto.setAttribute("class", "imgCoche");
             foto.width = 400;
             modelo.appendChild(foto);
+
+            // pinto texto
+            const txt = document.getElementsByClassName("demo")[0];
+            txt.innerHTML = c + " " + y + " " + precioFinal + "€";
+
         } else {
-            const modelo = document.getElementById("coche");
+            let secD = document.getElementById("secD");
+            secD.innerHTML = `<div class="div1">
+                            <div class="coche"></div>
+                            <div class="texto">
+                                <p class="demo"></p>
+                            </div>
+                        </div>`;
+
+            const modelo = document.getElementsByClassName("coche")[0];
             var foto = document.createElement('img');
             foto.src = 'img/golf.png';
+            foto.setAttribute("class", "imgCoche");
             foto.width = 400;
             modelo.appendChild(foto);
+
+            // pinto texto
+            const txt = document.getElementsByClassName("demo")[0];
+            txt.innerHTML = c + " " + y + " " + precioFinal + "€";
+
         }
 
-        document.getElementById("spinner").style.display = "none";
-        document.getElementById("div1").style.display = "block";
+        // document.getElementById("spinner").style.display = "none";
+        // document.getElementById("div1").style.display = "block";
 
-        // variables
-        let secD = document.getElementById("demo");
-        let precioFinal = precio + (((t) + (m)) - (d));
-
-        // pinto
-        secD.innerHTML = c + " " + y + " " + precioFinal + "€";
     }, 2500);
-
 }

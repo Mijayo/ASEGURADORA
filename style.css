@@ -58,6 +58,7 @@ body {
 }
 
 #secD {
+    overflow-y: scroll;
     display: none;
     margin-top: 25px;
     margin-left: 45px;
@@ -65,12 +66,13 @@ body {
     height: 350px;
 }
 
-#div1 {
+.div1 {
     /* border: 1px solid red; */
-    display: none;
+    /* display: none; */
     height: 150px;
     margin-top: 15px;
     background-color: #ffffff;
+    /* background-color: #cc2626; */
     border-radius: 15px;
 }
 
@@ -87,8 +89,8 @@ body {
     color: #1f2438;
 }
 
-#coche,
-#texto {
+.coche,
+.texto {
     vertical-align: top;
     display: inline-block;
     /* border: 1px solid red; */
@@ -96,15 +98,18 @@ body {
     width: 250px;
 }
 
-#texto {
+.texto {
     margin-left: 25px;
     text-align: center;
     margin-top: 70px;
+    z-index: 9;
 }
 
 .imgCoche {
+    /* border: 1px solid red; */
     margin-top: -20px;
     margin-left: -50px;
+    z-index: 99;
 }
 
 #spinner {
