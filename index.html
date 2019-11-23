@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Aseguradora RU</title>
 </head>
@@ -36,26 +37,20 @@
                 <div class="form-group">
                     <div class="custom-control custom-radio">
                         <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked="">
-                        <label class="custom-control-label" for="customRadio1">Basico</label>
+                        <label class="custom-control-label" id="cusR1" for="customRadio1">Basico</label>
                     </div>
                     <div class="custom-control custom-radio">
                         <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadio2">Completo</label>
+                        <label class="custom-control-label" id="cusR2" for="customRadio2">Completo</label>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btnM" id="calcular">calcular seguro</button>
+                <span>
+                    <i class="fas fa-print" id="printPDF"></i>
+                </span>
             </form>
         </div>
         <section id="secD">
-
-            <!-- <div id="div1">
-                <div id="coche"></div>
-                <div id="texto">
-                    <p id="demo"></p>
-                </div>
-            </div> -->
-
-
             <!-- SPINNNER -->
             <div class="lds-default" id="spinner">
                 <div></div>

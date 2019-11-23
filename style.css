@@ -3,10 +3,6 @@
     padding: 0;
 }
 
-body {
-    color: white !important;
-}
-
 .colorH1 {
     color: white !important;
 }
@@ -22,13 +18,14 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 6;
-    background-color: #1f2438;
+    /* rgb(255, 255, 255); */
+    /* #0b1025; 1f2438*/
+    background-color: #0b1025;
     height: 600px;
     border-radius: 15px;
 }
 
 .caja {
-    /* border: 1px solid red; */
     margin-top: 25px;
     margin-left: 25px;
     width: 450px;
@@ -49,6 +46,10 @@ body {
     margin-top: 50px;
 }
 
+.form-control {
+    padding: 0px 0px 0px 10px !important;
+}
+
 #imgBG {
     /* border: 1px solid red; */
     position: relative;
@@ -59,7 +60,7 @@ body {
 
 #secD {
     overflow-y: scroll;
-    display: none;
+    /* display: none; */
     margin-top: 25px;
     margin-left: 45px;
     width: 555px;
@@ -67,18 +68,6 @@ body {
 }
 
 .div1 {
-    /* border: 1px solid red; */
-    /* display: none; */
-    height: 150px;
-    margin-top: 15px;
-    background-color: #ffffff;
-    /* background-color: #cc2626; */
-    border-radius: 15px;
-}
-
-#div2 {
-    /* border: 1px solid red; */
-    display: none;
     height: 150px;
     margin-top: 15px;
     background-color: #ffffff;
@@ -86,7 +75,7 @@ body {
 }
 
 #demo {
-    color: #1f2438;
+    color: #1f2438 !important;
 }
 
 .coche,
@@ -99,16 +88,34 @@ body {
 }
 
 .texto {
-    margin-left: 25px;
+    margin-left: 35px;
     text-align: center;
-    margin-top: 70px;
+    margin-top: 10px;
     z-index: 9;
 }
 
+.txtDesc {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(78, 78, 78);
+}
+
 .imgCoche {
-    /* border: 1px solid red; */
     margin-top: -20px;
     margin-left: -50px;
+    z-index: 99;
+}
+
+.imgCocheSeat {
+    width: 310px;
+    margin-top: 25px;
+    margin-left: -10px;
+    z-index: 99;
+}
+
+.imgCocheGolf {
+    width: 240px;
+    margin-left: 30px;
     z-index: 99;
 }
 
@@ -133,6 +140,23 @@ input[type=radio] {
 
 .btnM {
     margin-top: 20px;
+    background-color: #919aa1;
+}
+
+.btnM:hover {
+    background-color: #ffffff !important;
+    color: #919aa1;
+}
+
+#printPDF {
+    float: right;
+    font-size: 25px;
+    color: #919aa1;
+    margin-top: 30px;
+}
+
+#printPDF:hover {
+    cursor: pointer;
 }
 
 .lds-default {

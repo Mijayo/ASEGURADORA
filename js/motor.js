@@ -27,13 +27,20 @@ const seguroCompleto = 0.5;
 
 
 function yoQueSe() {
+    // document.getElementById("secD").style.display = "none";
+
     document.getElementById("spinner").style.display = "block";
+
+    setTimeout(function() {
+        document.getElementById("spinner").style.display = "none";
+    }, 2450);
+
 }
 
 
 const calcularSeguro = document.getElementById('calcular').addEventListener('click', function(e) {
     e.preventDefault();
-    // yoQueSe();
+    yoQueSe();
 
     // Marca del coche
     var car = document.getElementById("car");
@@ -58,9 +65,12 @@ const calcularSeguro = document.getElementById('calcular').addEventListener('cli
     if (document.getElementById('customRadio1').checked) {
         // Basico 
         var tipo = precio * seguroBasico;
+        var tipoSeguro = document.getElementById('cusR1').textContent;
+
     } else if (document.getElementById('customRadio2').checked) {
         // Completo
         var tipo = precio * seguroCompleto;
+        var tipoSeguro = document.getElementById('cusR2').textContent;
     }
 
     ///// DESCUENTO DEPENDIENDO DEL AÑO /////
@@ -69,34 +79,28 @@ const calcularSeguro = document.getElementById('calcular').addEventListener('cli
     /////
 
     // Llamo a la funcion calculos pasandole parametros  Para pintar en el HTML
-    calculos(strUser, str, descuentoYear, tipo, marca);
+    calculos(strUser, str, descuentoYear, tipo, marca, tipoSeguro);
 });
 
 
-function calculos(c, y, d, t, m) {
+function calculos(c, y, d, t, m, ts) {
 
-
-    // const section = document.getElementById('secD');
-    // var div = document.createElement('div');
-    // div.setAttribute('class', '.div1');
-    // section.appendChild(div);
+    // document.getElementById("secD").style.display = "block";
 
     setTimeout(function() {
 
         // variables
         let precioFinal = precio + (((t) + (m)) - (d));
 
-
+        let secD = document.getElementById("secD");
+        secD.innerHTML += `<div class="div1">
+                        <div class="coche"></div>
+                        <div class="texto">
+                            <p class="demo"></p>
+                        </div>
+                    </div>`;
 
         if (c === "Audi") {
-
-            let secD = document.getElementById("secD");
-            secD.innerHTML = `<div class="div1">
-                            <div class="coche"></div>
-                            <div class="texto">
-                                <p class="demo"></p>
-                            </div>
-                        </div>`;
 
             const modelo = document.getElementsByClassName("coche")[0];
             var foto = document.createElement('img');
@@ -107,54 +111,41 @@ function calculos(c, y, d, t, m) {
 
             // pinto texto
             const txt = document.getElementsByClassName("demo")[0];
-            txt.innerHTML = c + " " + y + " " + precioFinal + "€";
+            txt.innerHTML = "<span class='txtDesc'>Descripcion<br>del Seguro</span>" + "<br>" + "Marca: " + c + "<br>" + "Año: " + y + "<br>" + "Tipo seguro: " + ts + "<br>" + "Total: " + precioFinal + "€";
 
 
         } else if (c === "Seat") {
 
-            let secD = document.getElementById("secD");
-            secD.innerHTML = `<div class="div1">
-                            <div class="coche"></div>
-                            <div class="texto">
-                                <p class="demo"></p>
-                            </div>
-                        </div>`;
-
             const modelo = document.getElementsByClassName("coche")[0];
             var foto = document.createElement('img');
             foto.src = 'img/seat.png';
-            foto.setAttribute("class", "imgCoche");
+            foto.setAttribute("class", "imgCocheSeat");
             foto.width = 400;
             modelo.appendChild(foto);
 
             // pinto texto
-            const txt = document.getElementsByClassName("demo")[0];
-            txt.innerHTML = c + " " + y + " " + precioFinal + "€";
+            const txt = document.getElementsByClassName("demo")[1];
+            txt.innerHTML = "<span class='txtDesc'>Descripcion<br>del Seguro</span>" + "<br>" + "Marca: " + c + "<br>" + "Año: " + y + "<br>" + "Tipo seguro: " + ts + "<br>" + "Total: " + precioFinal + "€";
+
 
         } else {
-            let secD = document.getElementById("secD");
-            secD.innerHTML = `<div class="div1">
-                            <div class="coche"></div>
-                            <div class="texto">
-                                <p class="demo"></p>
-                            </div>
-                        </div>`;
 
             const modelo = document.getElementsByClassName("coche")[0];
             var foto = document.createElement('img');
             foto.src = 'img/golf.png';
-            foto.setAttribute("class", "imgCoche");
+            foto.setAttribute("class", "imgCocheGolf");
             foto.width = 400;
             modelo.appendChild(foto);
 
             // pinto texto
-            const txt = document.getElementsByClassName("demo")[0];
-            txt.innerHTML = c + " " + y + " " + precioFinal + "€";
+            const txt = document.getElementsByClassName("demo")[2];
+            txt.innerHTML = "<span class='txtDesc'>Descripcion<br>del Seguro</span>" + "<br>" + "Marca: " + c + "<br>" + "Año: " + y + "<br>" + "Tipo seguro: " + ts + "<br>" + "Total: " + precioFinal + "€";
+
 
         }
-
-        // document.getElementById("spinner").style.display = "none";
-        // document.getElementById("div1").style.display = "block";
-
     }, 2500);
 }
+
+const printPDF = document.getElementById('printPDF').addEventListener('click', function() {
+    // alert('hola');
+});
