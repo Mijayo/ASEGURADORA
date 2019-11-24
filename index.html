@@ -12,14 +12,32 @@
     <title>Aseguradora RU</title>
 </head>
 
+<script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js "></script>
 
 <body>
+    <!-- SPINNNER -->
+    <div class="lds-default" id="spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!--  -->
 
     <div class="container cajaCon">
         <h1 class="display-3 colorH1">Aseguradora</h1>
         <span id="imgLogo"></span>
         <hr class="my-4 colorHR">
+
         <div class="caja">
             <form method="POST">
                 <div class="form-group">
@@ -46,27 +64,16 @@
                 </div>
                 <button type="submit" class="btn btn-primary btnM" id="calcular">calcular seguro</button>
                 <span>
-                    <i class="fas fa-print" id="printPDF"></i>
+                    <i class="fas fa-print" id="printPDF" onclick="printJS({
+                        printable: someJSONdata, 
+                        properties: ['coche', 'año', 'tipo seguro','precio'], 
+                        header: '<h3 class=>ASEGURADORA RU</h3>',
+                        type: 'json'})"></i>
                 </span>
             </form>
         </div>
         <section id="secD">
-            <!-- SPINNNER -->
-            <div class="lds-default" id="spinner">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <!--  -->
+
         </section>
     </div>
     <section>

@@ -60,9 +60,9 @@
 
 #secD {
     overflow-y: scroll;
-    /* display: none; */
-    margin-top: 25px;
-    margin-left: 45px;
+    position: relative;
+    margin-top: -410px;
+    margin-left: 520px;
     width: 555px;
     height: 350px;
 }
@@ -124,6 +124,7 @@
     position: absolute;
     left: 68%;
     top: 50vh;
+    z-index: 99;
 }
 
 .caja,
