@@ -230,25 +230,39 @@ const printPDF = document.getElementById('printPDF').addEventListener('click', f
 
             var co = cocheAsegurado[i].coche;
             var yC = cocheAsegurado[i].year;
-            console.log(co);
+            // console.log(co);
+
+            let obj = {
+                coche: co,
+                year: yC
+            };
+
+            imprimir(obj);
         }
     }
 
 });
 
-someJSONdata = [{
-        name: `${this.co}`,
-        email: 'john@doe.com',
-        phone: '111-111-1111'
-    },
-    {
-        name: 'Barry Allen',
-        email: 'barry@flash.com',
-        phone: '222-222-2222'
-    },
-    {
-        name: 'Cool Dude',
-        email: 'cool@dude.com',
-        phone: '333-333-3333'
-    }
-];
+function imprimir(obj) {
+    // window.location.href = "divs.html";
+    document.getElementById("test").style.display = "none";
+    // Pinto la seccion contenedora de la derecha inyectando codigo via JS
+    document.getElementById("secI").style.display = "block";
+    let secI = document.getElementById("secI");
+    // Asigno el HTML con += para que no sobreescriba los datos y me genere siempre una pastilla unica
+    secI.innerHTML += `<div class="div1">
+                        <div class="coche"></div>
+                        <div class="texto">
+                            <p class="demo"></p>
+                        </div>
+                        </div>`;
+
+    document.getElementsByClassName("coche")[0].innerHTML = obj.coche;
+    document.getElementsByClassName("demo")[0].innerHTML = obj.year;
+
+    // alert(valorMarca + " " + valorYear);
+
+    window.print();
+
+    location.reload();
+}

@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+#test {
+    display: block;
+}
+
 .colorH1 {
     color: white !important;
 }
@@ -18,8 +22,6 @@
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 6;
-    /* rgb(255, 255, 255); */
-    /* #0b1025; 1f2438*/
     background-color: #0b1025;
     height: 600px;
     border-radius: 15px;
@@ -51,7 +53,6 @@
 }
 
 #imgBG {
-    /* border: 1px solid red; */
     position: relative;
     background-image: url("img/_bg.png");
     background-size: cover;
@@ -82,7 +83,6 @@
 .texto {
     vertical-align: top;
     display: inline-block;
-    /* border: 1px solid red; */
     height: 150px;
     width: 250px;
 }
@@ -160,6 +160,21 @@ input[type=radio] {
     cursor: pointer;
 }
 
+#secI {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    top: 15vh;
+    left: 12vw;
+    width: 1000px;
+    height: 500px;
+    z-index: 99;
+}
+
+
+/************ SPINNER *************/
+
 .lds-default {
     display: inline-block;
     position: relative;
@@ -205,6 +220,9 @@ input[type=radio] {
     top: 11px;
     left: 22px;
 }
+
+
+/************ SPINNER *************/
 
 .lds-default div:nth-child(6) {
     animation-delay: -0.5s;
@@ -259,3 +277,6 @@ input[type=radio] {
         transform: scale(1.5);
     }
 }
+
+
+/************ SPINNER *************/

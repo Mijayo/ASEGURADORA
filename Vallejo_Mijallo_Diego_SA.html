@@ -5,12 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- UTILIZO BOOTSTRAP -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css">
+    <!-- LINK A AJAX -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <!-- LINK A MI CSS -->
     <link rel="stylesheet" href="style.css">
     <title>Aseguradora RU</title>
 </head>
+
+<!-- SCRIPTS CDN DE LAS LIBRERIAS -->
 
 <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js "></script>
@@ -33,7 +38,7 @@
     </div>
     <!--  -->
 
-    <div class="container cajaCon">
+    <div class="container cajaCon" id="test">
         <h1 class="display-3 colorH1">Aseguradora</h1>
         <span id="imgLogo"></span>
         <hr class="my-4 colorHR">
@@ -63,25 +68,37 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btnM" id="calcular">calcular seguro</button>
+                <!-- LIBRERIA PARA IMPRIMIR EL HISTORIAL DE SEGUROS EN PDF -->
                 <span>
-                    <i class="fas fa-print" id="printPDF" onclick="printJS({
-                        printable: someJSONdata, 
-                        properties: ['coche', 'año', 'tipo seguro','precio'], 
-                        header: '<h3 class=>ASEGURADORA RU</h3>',
-                        type: 'json'})"></i>
+                    <i class="fas fa-print" id="printPDF"></i>
                 </span>
+                <!--  -->
             </form>
         </div>
-        <section id="secD">
 
+        <!-- SECCION DE LA DERECHA -->
+        <section id="secD">
         </section>
+        <!--  -->
+
     </div>
+
+    <!-- SECCION QUE SE IMPRIME -->
+    <section id="secI">
+        <h3>HISTORIAL DE COCHES ASEGURADOS</h3>
+    </section>
+    <!--  -->
+
+    <!-- IMAGEN DE FONDO -->
     <section>
         <div id="imgBG"></div>
     </section>
-
+    <!--  -->
 
 </body>
+<!--  -->
+<script src="js/print.js"></script>
+<!-- MI SCRIPT -->
 <script src="js/motor.js"></script>
 
 </html>
