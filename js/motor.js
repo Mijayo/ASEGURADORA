@@ -218,26 +218,23 @@ function localObjeto(c, y, d, ts) {
 
 
 const printPDF = document.getElementById('printPDF').addEventListener('click', function() {
-
+    // Si el localStorage esta vacio muestro un alert
     if (localStorage.getItem('cocheAsegurado') === null) {
         alert('No se puede completar la accion. No hay datos para imprimir');
     } else {
+        // Oculto el display azul 
         document.getElementById("test").style.display = "none";
-        // Pinto la seccion contenedora de la derecha inyectando codigo via JS
+        // Pinto la seccion contenedora del PDF usando un display = "block"
         document.getElementById("secI").style.display = "block";
-
+        // Obtengo el array de datos del localStorage
         let cocheAsegurado = JSON.parse(localStorage.getItem('cocheAsegurado'));
-
-        console.log(cocheAsegurado);
-
+        // Recorro el array en el localStorage con un for
         for (var i = 0; i < cocheAsegurado.length; i++) {
-
-
-            // window.location.href = "divs.html";
             document.getElementById("test").style.display = "none";
+
             // Pinto la seccion contenedora de la derecha inyectando codigo via JS
             document.getElementById("secI").style.display = "block";
-
+            // Selecciono demo e inyecto HTML via JS con los datos del localStorage
             document.getElementById('demo').innerHTML =
                 `<div><img src="img/audi.png" height='auto' width='300'>
                 <br>Marca: ${cocheAsegurado[0].coche} Año: ${cocheAsegurado[0].year} 
@@ -252,14 +249,13 @@ const printPDF = document.getElementById('printPDF').addEventListener('click', f
                 Descuento: ${cocheAsegurado[2].descuento} Tipo seguro: ${cocheAsegurado[2].tipoSeguro}</div>`;
 
         }
-
+        // Utilizo un setTimeout() para que le de tiempo al navegador a renderizar las imagenes
         setTimeout(function() {
+            // Imprimo PDF con window.print()
             window.print();
-
+            // Redirecciono a la pagina de inicio con location.reload()
             location.reload();
-
         }, 100);
     }
-
 
 });
